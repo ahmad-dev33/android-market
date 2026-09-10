@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Store, CheckCircle, XCircle } from "lucide-react";
+import { Store, CheckCircle } from "lucide-react";
 import api from "../services/api";
 
 interface Vendor {

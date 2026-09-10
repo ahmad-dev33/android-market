@@ -1,5 +1,5 @@
 import { ActivityIndicator, Pressable, Text, View } from "react-native";
-import { COLORS, RADIUS, SPACING } from "@/constants/theme";
+import { COLORS } from "@/constants/theme";
 
 type ButtonProps = {
   title: string;
@@ -10,6 +10,7 @@ type ButtonProps = {
   disabled?: boolean;
   fullWidth?: boolean;
   icon?: React.ReactNode;
+  className?: string;
 };
 
 export function Button({
@@ -21,6 +22,7 @@ export function Button({
   disabled = false,
   fullWidth = false,
   icon,
+  className = "",
 }: ButtonProps) {
   const baseStyle = "flex-row items-center justify-center rounded-xl";
 
@@ -58,7 +60,7 @@ export function Button({
       disabled={disabled || loading}
       className={`${baseStyle} ${sizeStyle} ${variantStyle} ${
         disabled ? "opacity-50" : ""
-      } ${fullWidth ? "w-full" : ""}`}
+      } ${fullWidth ? "w-full" : ""} ${className}`}
     >
       {loading ? (
         <ActivityIndicator color={variant === "primary" ? "white" : COLORS.primary} />

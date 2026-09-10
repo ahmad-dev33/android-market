@@ -74,7 +74,9 @@ api.interceptors.response.use(
         return api(originalRequest);
       } catch (refreshError) {
         processQueue(refreshError, null);
-        await AsyncStorage.multiRemove(["access_token", "refresh_token", "user"]);
+        await AsyncStorage.removeItem("access_token");
+        await AsyncStorage.removeItem("refresh_token");
+        await AsyncStorage.removeItem("user");
         return Promise.reject(refreshError);
       } finally {
         isRefreshing = false;

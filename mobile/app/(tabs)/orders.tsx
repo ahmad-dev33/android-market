@@ -54,7 +54,7 @@ export default function OrdersScreen() {
         contentContainerStyle={{ paddingHorizontal: 16 }}
         renderItem={({ item }) => (
           <Pressable
-            onPress={() => router.push(`/order/${item.id}`)}
+            onPress={() => router.push(`/order/${item.id}` as any)}
             className="bg-white rounded-xl p-4 mb-3 border border-dark-100"
           >
             <View className="flex-row items-center justify-between mb-2">

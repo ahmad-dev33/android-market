@@ -4,7 +4,6 @@ import {
   Package,
   ShoppingCart,
   Users,
-  TrendingUp,
   ArrowUpRight,
 } from "lucide-react";
 import api from "../services/api";
@@ -108,7 +107,7 @@ export default function Dashboard() {
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
         <p className="text-gray-500 text-sm mt-1">
-          Overview of your marketplace
+          {loading ? "Loading overview..." : "Overview of your marketplace"}
         </p>
       </div>
 

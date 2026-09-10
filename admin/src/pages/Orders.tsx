@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Search } from "lucide-react";
 import api from "../services/api";
 
 interface Order {

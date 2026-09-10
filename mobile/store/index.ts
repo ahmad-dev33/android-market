@@ -73,7 +73,9 @@ export const useAppStore = create<AppState>((set, get) => ({
         await authApi.logout(refreshToken);
       } catch {}
     }
-    await AsyncStorage.multiRemove(["access_token", "refresh_token", "user"]);
+    await AsyncStorage.removeItem("access_token");
+    await AsyncStorage.removeItem("refresh_token");
+    await AsyncStorage.removeItem("user");
     set({
       user: null,
       isAuthenticated: false,
@@ -97,7 +99,9 @@ export const useAppStore = create<AppState>((set, get) => ({
       get().fetchCart();
       get().fetchNotifications();
     } catch {
-      await AsyncStorage.multiRemove(["access_token", "refresh_token", "user"]);
+      await AsyncStorage.removeItem("access_token");
+      await AsyncStorage.removeItem("refresh_token");
+      await AsyncStorage.removeItem("user");
       set({ user: null, isAuthenticated: false, isLoading: false });
     }
   },

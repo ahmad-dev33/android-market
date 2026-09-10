@@ -6,7 +6,6 @@ import {
   Users,
   Store,
   Tag,
-  Bell,
   LogOut,
 } from "lucide-react";
 

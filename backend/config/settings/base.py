@@ -1,10 +1,15 @@
+from pathlib import Path
 import os
 from datetime import timedelta
-from pathlib import Path
-
+from dotenv import load_dotenv
 import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+load_dotenv(BASE_DIR.parent / '.env')
+
+
+
+
 
 SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-dev-key-change-in-production")
 DEBUG = os.getenv("DEBUG", "True").lower() == "true"
